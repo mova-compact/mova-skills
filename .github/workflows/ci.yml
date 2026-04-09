@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate marketplace manifest
+        run: python -c "import json; json.load(open('.claude-plugin/marketplace.json', encoding='utf-8'))"
+
+      - name: Verify forge skill exists
+        run: test -f skills/mova-forge/SKILL.md
