@@ -1,27 +1,28 @@
 # MOVA Skills
 
-MOVA Skills teach an AI agent to turn raw business intentions into executable MOVA contract packages.
+MOVA Skills teach an AI agent to understand MOVA, turn business intentions into contract packages, prepare integrations, and operate the current MOVA runtime.
 
 ```bash
 /plugin marketplace add mova-compact/mova-skills
 ```
 
-## Current Skill
+## Included Skills
 
+- `mova-language` — teaches the agent the MOVA language and ecosystem concepts
 - `mova-forge` — full contract authoring flow: intent crystallization, step classification, and canonical package generation
+- `mova-runner` — executes contracts through the real current MOVA Tool SDK and State API surface
+- `mova-connector` — prepares connector and binding setup for external MCP-backed systems
 
-## What MOVA Forge Does
+## What You Get
 
-`mova-forge` is the first public skill in this repository.
+This repository now covers the core public MOVA skill set:
 
-It helps the agent:
+- understand the language and conceptual model
+- author canonical contract packages
+- prepare connector and binding posture honestly
+- run contracts through the live SDK/API contour
 
-- crystallize a vague business task into an explicit intent
-- classify every step as `DETERMINISTIC`, `AI_ATOMIC`, `EXTERNAL_CALL`, or `HUMAN_GATE`
-- shape the contract structure and runtime bindings
-- generate a canonical MOVA contract package
-
-This skill is a prompt/instruction layer. It does not execute the contract itself.
+`mova-forge` remains the authoring anchor. `mova-runner` and `mova-connector` were aligned to the current public implementation so they do not promise commands or flows that do not yet exist.
 
 ## Example
 
@@ -30,7 +31,8 @@ You: "I want to automate invoice processing with OCR, duplicate check, and human
 → MOVA Forge: clarifies scope and constraints
 → MOVA Forge: classifies the workflow step by step
 → MOVA Forge: produces a canonical contract package
-→ Execute on MOVA Platform: via MOVA State API and MOVA Tool SDK
+→ MOVA Connector: prepares external runtime connectivity if needed
+→ MOVA Runner: executes through MOVA State API and MOVA Tool SDK
 ```
 
 ## Why Contracts, Not Prompts
@@ -46,7 +48,14 @@ A prompt is a wish. A contract is an obligation. MOVA contracts define the steps
 
 ## Status
 
-This repository starts with `mova-forge` as the first published skill. Additional MOVA skills can be added here later without changing the marketplace structure.
+This repository now publishes the first public MOVA skill pack around the real current platform:
+
+- language
+- forge
+- runner
+- connector
+
+The skills are intentionally aligned with the current implementation, not with future product promises.
 
 Created and maintained by Sergii Miasoiedov.
 

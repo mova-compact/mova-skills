@@ -1,6 +1,6 @@
 {
   "name": "mova-skills",
-  "description": "MOVA skills for contract-driven AI automation, starting with Forge for intent calibration and contract authoring.",
+  "description": "MOVA skills for contract-driven AI automation: language, forge, runner, and connector setup.",
   "author": {
     "name": "Sergii Miasoiedov",
     "url": "https://mova-lab.eu"
@@ -8,12 +8,15 @@
   "plugins": [
     {
       "name": "mova-skills",
-      "description": "MOVA skill pack for turning business intentions into classified contract packages.",
+      "description": "MOVA skill pack for understanding MOVA, authoring contracts, preparing connectors, and running workflows.",
       "source": "./",
       "skills": [
-        "skills/mova-forge"
+        "skills/mova-language",
+        "skills/mova-forge",
+        "skills/mova-runner",
+        "skills/mova-connector"
       ],
-      "version": "0.1.0",
+      "version": "0.2.0",
       "category": "productivity",
       "tags": [
         "mova",
@@ -21,7 +24,11 @@
         "automation",
         "intent",
         "authoring",
-        "audit"
+        "audit",
+        "execution",
+        "mcp",
+        "connectors",
+        "language"
       ],
       "strict": false
     }

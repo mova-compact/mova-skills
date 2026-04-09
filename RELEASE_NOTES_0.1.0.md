@@ -1,34 +1,36 @@
-# MOVA Skills 0.1.0
+# MOVA Skills 0.2.0
 
 ## Summary
 
-Initial public release of the `mova-skills` repository.
+Expanded public release of the `mova-skills` repository.
 
-This release publishes the first MOVA skill:
+This release publishes the first public MOVA skill pack:
 
+- `mova-language`
 - `mova-forge`
+- `mova-runner`
+- `mova-connector`
 
 ## Included
 
 - Claude Code marketplace manifest at `.claude-plugin/marketplace.json`
+- `mova-language` skill in `skills/mova-language/SKILL.md`
 - `mova-forge` skill in `skills/mova-forge/SKILL.md`
+- `mova-runner` skill in `skills/mova-runner/SKILL.md`
+- `mova-connector` skill in `skills/mova-connector/SKILL.md`
 - public GitHub README
 - MIT-0 license
 
-## MOVA Forge Scope
+## Skill Pack Scope
 
-`mova-forge` covers:
+- `mova-language` explains the MOVA semantic model honestly, including the current non-automated status of the genetic layer
+- `mova-forge` covers intent crystallization, step classification, canonical contract package generation, and handoff
+- `mova-runner` is aligned to the real current `mova-tool-sdk` runtime surface
+- `mova-connector` is aligned to the real current connector and binding model, not to an unreleased one-click onboarding flow
 
-- intent crystallization
-- step classification
-- canonical contract package generation
-- handoff into the downstream MOVA platform flow
+## Release Position
 
-## Position In The Ecosystem
-
-`mova-skills` is the public skill distribution layer.
-
-It sits next to:
+`mova-skills` is the public skill distribution layer in the MOVA ecosystem. It sits next to:
 
 - `mova-spec`
 - `mova-tool-sdk`
