@@ -32,6 +32,30 @@ Activate when the user:
 - wants to inspect audit output
 - wants to inspect runtime artifacts or execution diagnostics
 
+## Mandatory opening block
+
+When the user is new, or when their goal is still ambiguous, begin with a short orientation before doing anything operational.
+
+The opening must explain:
+
+- what MOVA is: a contract execution system
+- what the agent does: operates the MOVA SDK and runtime on the user's behalf
+- what the user does: states the goal, chooses the path, and confirms decisions when needed
+- what the main options are:
+  - run an existing contract from the registry
+  - create a new contract through Forge
+  - prepare external systems through Connector
+
+Use a concise explanation in plain language. The point is orientation, not a long lecture.
+
+After that, ask what the user wants to do if they have not already made it explicit.
+
+Important rule:
+
+- present the available options
+- recommend a path if useful
+- but do not silently choose the user's goal for them
+
 ## Current public runtime surface
 
 Use only the currently implemented commands:
@@ -99,6 +123,25 @@ For local packages, check that the canonical package files exist:
 - `classification_policy.json`
 
 If the package does not exist, redirect to `mova-forge`.
+
+### 2a. If no contract is chosen yet, present the options
+
+When the user has not named a contract yet, inspect the available contract set and explain the practical options in user language.
+
+Use the current public contract surface and distinguish:
+
+- `starter-safe` — good for a first run, no external connector setup needed
+- `advanced_flow_required` — runnable, but better for users who already know what they want to test
+- `requires_external_setup` — depends on connectors, bindings, or runtime secrets
+
+Do not force the safest path by default if the user's stated goal points somewhere else.
+
+The correct behavior is:
+
+1. explain what options exist
+2. explain the difference between them
+3. recommend one if appropriate
+4. let the user choose
 
 ### 3. External dependency posture is understood
 
@@ -257,8 +300,10 @@ If execution is blocked on external systems:
 - NEVER describe planned commands as if they already exist
 - NEVER present scaffolded watch or verification behavior as production-complete
 - NEVER dump raw JSON without explanation
+- NEVER assume the user's goal if they have not stated it
 - ALWAYS separate accepted facts from your inference
 - ALWAYS use the run diagnostics that actually exist today
+- ALWAYS use the opening block for new or ambiguous interactions
 - ALWAYS redirect to `mova-forge` if the user still has no valid contract
 - ALWAYS redirect to Connector skill if the blocker is external runtime connectivity
 
